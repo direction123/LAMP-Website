@@ -1,0 +1,345 @@
+body{
+    margin: 0 auto;
+    width:83.33%;
+    max-width: 100%;
+    background: #FFF;
+    font:14px/normal Helvetica,Verdana,sans
+}
+input, span {
+    font:14px/normal Helvetica,Verdana,sans
+}
+
+/*
+header
+*/
+#header{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+}
+#headerShipping {
+    text-align:center;
+    height: 30px;
+    background: #8b2500;
+}
+#headerShippingFont {
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #ffffff;
+    font-family:futura;
+    font-weight: lighter;
+}
+#headerNav{
+    width: 100%;
+    background-color: #ffffff;
+    font-size: 14pt;
+}
+#headerNav-1{
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#WelcomeForm{
+    display: inline-block;
+    border: none;
+    width: 50%;
+}
+#WelcomeFormIn {
+    color: #8b2500;
+    font-size: 26px;
+}
+#footLogo {
+    width:80px;
+    height:40px;
+    vertical-align: middle;
+}
+#cartForm{
+    display: inline-block;
+    border: none;
+    float: right;
+}
+#cartFormImg {
+    width:40px;
+    height:40px;
+    vertical-align: middle;
+}
+#cartFormIn {
+    color: #000000;
+    font-size: 16px;
+}
+
+#headerNav-2{
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #ffffff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#ffffff, #ccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffffff, #ccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffffff, #ccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ffffff, #ccc); /* Standard syntax */
+}
+#searchForm{
+    display: inline-block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 7px;
+    width: 70%;
+}
+#searchProd {
+    width: 80%;
+}
+#ids {
+    display: inline-block;
+    float:right;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+#loginForm{
+    display: inline-block;
+}
+#registerForm{
+    display: inline-block;
+}
+#helloID {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    margin-right: 5px;
+}
+#logoutForm{
+    display: inline-block;
+}
+#myOrderForm{
+    display: inline-block;
+}
+#myAccountForm{
+    display: inline-block;
+}
+
+/*
+products
+*/
+.prodForm {
+    display: inline-block;
+    width: 23%;
+}
+.buttonHolder {
+    text-align: center;
+}
+.prodNm {
+    text-decoration: underline;
+}
+.prodPrice {
+    color: #8b2500;
+    font-size: 12px;
+}
+.prodView-1 {
+    display: inline-block;
+}
+.prodView-1 img{
+    margin-right: 100px;
+}
+#AddCartProdQty {
+    width: 30px;
+    margin-bottom: 10px;
+}
+.prodView-2 {
+    display: inline-block;
+    text-align: center;
+}
+.prodView-2 .prodPrice {
+    font-size: 16px;
+}
+#othersInterested {
+    margin-top: 100px;
+}
+/*
+cart
+*/
+.cartProd {
+    display: inline-block;
+    width: 30%;
+}
+.cartPrice {
+    display: inline-block;
+    width: 20%;
+}
+.cartQuant {
+    display: inline-block;
+}
+.cartEmpty {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cartImg {
+    width:50px;
+    height:50px;
+}
+.cartProdName {
+    display: inline-block;
+}
+
+.cartDeleteAll {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cartLogin {
+    display: inline-block;
+    margin-top: 10px;
+}
+.cartTotalPrice {
+    display: inline-block;
+    margin-left: 100px;
+}
+/*
+account
+*/
+.accountForm {
+    display: inline-block;
+    width: 150px
+}
+/*
+order
+*/
+.orderINFO {
+    margin-top: 30px;
+}
+.orderList {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.orderListDate {
+    margin-right: 10px;
+    display: inline-block;
+}
+.orderListBT {
+    display: inline-block;
+}
+
+
+
+.borderInput {
+    background: transparent;
+    border:1px solid;;
+}
+.transparentInput {
+    background: transparent;
+    border:none;
+}
+.error {
+    color: #FF0000;
+}
+.grid {
+    max-width: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.row {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .col-1 {
+        width: 100%;
+    }
+
+    .col-2 {
+        width: 100%;
+    }
+
+    .col-3 {
+        width: 100%;
+    }
+
+    .col-4 {
+        width: 100%;
+    }
+
+    .col-5 {
+        width: 100%;
+    }
+
+    .col-6 {
+        width: 100%;
+    }
+
+    .col-7 {
+        width: 100%;
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    .col-9 {
+        width: 100%;
+    }
+
+    .col-10 {
+        width: 100%;
+    }
+
+    .col-11 {
+        width: 100%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+}
