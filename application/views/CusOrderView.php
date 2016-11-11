@@ -15,7 +15,7 @@
             <?php
             echo '<h2>Order List</h2>';
             foreach ($customerOrder as $cO) {
-                echo '<form action="/hw4/index.php/Maincontroller/view_cus_order_details" method="post">';
+                echo '<form action="/index.php/Maincontroller/view_cus_order_details" method="post">';
                 echo '<div class="orderList">';
                     echo '<div class="orderListDate">';
                         echo '<span>'.$cO->orderDate.'</span>';

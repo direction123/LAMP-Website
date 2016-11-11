@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-2">
             <h2>Shop by Department</h2>
-            <form name="CatForm" id="CatForm"  action="/hw4/index.php/Maincontroller/view_products_by_category" method="Post">
+            <form name="CatForm" id="CatForm"  action="/index.php/Maincontroller/view_products_by_category" method="Post">
                 <?php
                 foreach($ProductCategoryDetails as $PC)
                     echo '<input type="submit" name="prodCatNm" class="transparentInput" value="'.$PC->productCategoryName.'"><br>';
@@ -27,7 +27,7 @@
                 ?>
             </div>
             <div class="prodView-2">
-                <form action="/hw4/index.php/Maincontroller/add_to_cart" method="Post">
+                <form action="/index.php/Maincontroller/add_to_cart" method="Post">
                     <?php
                     if($ProductIsSale==true){
                         foreach($SalesProduct as $SP){
@@ -64,7 +64,7 @@
                 <?php
                 foreach($OtherInterestedProductsbyCategory as $OPC){
                     ?>
-                    <form class="prodForm" action="/hw4/index.php/Maincontroller/view_single_product" method="Post">
+                    <form class="prodForm" action="/index.php/Maincontroller/view_single_product" method="Post">
                         <input type="hidden" name="prodID" value="<?php
                         echo $OPC->productID; ?>">
                         <div class="buttonHolder">

@@ -13,29 +13,29 @@
     </div>
     <div id="headerNav">
         <div id="headerNav-1">
-            <form name="WelcomeForm" id="WelcomeForm" action="/hw4/index.php/Maincontroller/index_login" method="Post">
+            <form name="WelcomeForm" id="WelcomeForm" action="/index.php/Maincontroller/index_login" method="Post">
                 <input type="submit" id="WelcomeFormIn" class="transparentInput" value="Welcome to online footware store!">
             </form>
             <img src="<?php echo asset_url(); ?>/baby_feet.png" id="footLogo" alt="HTML5 Icon">
-            <form name="cartForm" id="cartForm" action="/hw4/index.php/Maincontroller/view_cus_cart" method="Post">
+            <form name="cartForm" id="cartForm" action="/index.php/Maincontroller/view_cus_cart" method="Post">
                 <img src="<?php echo asset_url(); ?>/cart.png" id="cartFormImg" alt="HTML5 Icon">
                 <input type="submit" id="cartFormIn" class="transparentInput" value="Shopping Cart">
             </form>
         </div>
         <div id="headerNav-2">
-            <form name="searchForm" id="searchForm" action="/hw4/index.php/Maincontroller/view_products_by_search" method="Post">
+            <form name="searchForm" id="searchForm" action="/index.php/Maincontroller/view_products_by_search" method="Post">
                 <input type="text" name="searchProd" id="searchProd" placeholder="Shoes, Sales" value="">
                 <input type="submit" id="searchFromIn" class="transparentInput" value="Search Products">
             </form>
             <div id="ids">
                 <span id="helloID">  Hello!  <?php echo $customerUsername; ?></span>
-                <form name="myOrderForm" id="myOrderForm" action="/hw4/index.php/Maincontroller/view_cus_order" method="Post">
+                <form name="myOrderForm" id="myOrderForm" action="/index.php/Maincontroller/view_cus_order" method="Post">
                     <input type="submit" name="myOrderFormIn" class="transparentInput" value="My Order">
                 </form>
-                <form name="myAccountForm" id="myAccountForm" action="/hw4/index.php/Maincontroller/view_cus_account" method="Post">
+                <form name="myAccountForm" id="myAccountForm" action="/index.php/Maincontroller/view_cus_account" method="Post">
                     <input type="submit" name="myAccountFormIn" class="transparentInput" value="My Account">
                 </form>
-                <form name="logoutForm" id="logoutForm" action="/hw4/index.php/Maincontroller/user_logout_process" method="Post">
+                <form name="logoutForm" id="logoutForm" action="/index.php/Maincontroller/user_logout_process" method="Post">
                     <input type="submit" id="logoutFormIn" class="transparentInput" value="Logout">
                 </form>
             </div>
