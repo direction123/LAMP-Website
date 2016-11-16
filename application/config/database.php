@@ -67,10 +67,10 @@ define('DB_PASS', $connection_info['pass']);
 
 
 
-$db['default']['hostname'] = constant("DB_HOST");
-$db['default']['username'] = constant("DB_USER");
-$db['default']['password'] = constant("DB_PASS");
-$db['default']['database'] = constant("DB_DATABASE");
+$db['default']['hostname'] = 'csci571database.cfgacq3r51se.us-east-1.rds.amazonaws.com:3306';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'DDxxcoding';
+$db['default']['database'] = 'myDatabase',
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
