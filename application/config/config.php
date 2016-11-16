@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'https://stark-cove-98897.herokuapp.com/';
 
 /*
 |--------------------------------------------------------------------------
