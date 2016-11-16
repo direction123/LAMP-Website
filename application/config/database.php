@@ -48,29 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-
-// If running locally
-$url = "mysql://test:test@127.0.0.1/test?reconnect=true";
-
-// Else, if running on Heroku
-if(isset($_ENV['CLEARDB_DATABASE_URL'])){
-	$url = $_ENV['CLEARDB_DATABASE_URL'];
-}
-
-// Parse connection url
-$connection_info = parse_url($url);
-
-define('DB_HOST', $connection_info['host']);
-define('DB_DATABASE', substr($connection_info['path'], 1));
-define('DB_USER', $connection_info['user']);
-define('DB_PASS', $connection_info['pass']);
-
-
-
-$db['default']['hostname'] = 'csci571database.cfgacq3r51se.us-east-1.rds.amazonaws.com:3306';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'DDxxcoding';
-$db['default']['database'] = 'myDatabase';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = '';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
