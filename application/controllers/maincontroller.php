@@ -60,7 +60,7 @@ class Maincontroller extends CI_Controller {
             $this->load->view("HeaderGuestView");
             $this->load->view("IndexGuestView", $para);
         } elseif (!(isset($_SESSION["customerID"]))) {
-            echo "<script>alert("No customerID");</script>";
+            echo "<script>alert('No customerID');</script>";
             session_unset();
             $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
             $para["SpecialSalesProd"] = $this->maindatabasemodel->getSpecialSalesProd();
@@ -315,7 +315,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -348,7 +348,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -380,7 +380,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -412,7 +412,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -489,7 +489,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -535,7 +535,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -610,7 +610,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -635,7 +635,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -747,7 +747,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -767,7 +767,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -791,7 +791,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
@@ -812,7 +812,7 @@ class Maincontroller extends CI_Controller {
         if ((isset($_SESSION["customerID"]))) {
             if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
                 $timeoutFlag = 1;
-                echo "<script>alert("Inactivity for " . $_SESSION["customerTimeout"] . "s!");</script>";
+                echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
                 $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
