@@ -60,10 +60,10 @@ $password = isset($url["pass"]) ? $url["pass"] : '';
 $database = substr($url["path"], 1);
 
 
-$db['default']['hostname'] = $server === 'localhost' ? '127.0.0.1' : $server;
-$db['default']['username'] = $username;
-$db['default']['password'] = $password;
-$db['default']['database'] = $database;
+$db['default']['hostname'] = 'csci571database.cfgacq3r51se.us-east-1.rds.amazonaws.com:3306';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'DDxxcoding';
+$db['default']['database'] = 'myDatabase';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
