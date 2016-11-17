@@ -32,7 +32,7 @@
                     if($ProductIsSale==true){
                         foreach($SalesProduct as $SP){
                             echo '<div class="prodPrice">';
-                            echo  $SP->salesPrice;
+                            echo  "$".$SP->salesPrice;
                             echo " <strike>$" . $SP->productPrice. "</strike><br>";
                             echo '</div>';
                             //echo "Sales Date: '".$SP->startDate."' - '".$SP->endDate."'<p></p>";
