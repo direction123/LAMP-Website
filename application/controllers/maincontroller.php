@@ -254,6 +254,7 @@ class Maincontroller extends CI_Controller {
                 $_SESSION["customerLastActivitytime"] = time();
                 $_SESSION["customerTimeout"] = 300;
 
+                echo $_SESSION['customerID'];
                 $para['customerUsername'] = $_SESSION["customerUsername"];
                 $para['customerLastActivitytime'] = $_SESSION["customerLastActivitytime"];
                 $para['customerTimeout'] = $_SESSION["customerTimeout"];
