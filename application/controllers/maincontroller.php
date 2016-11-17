@@ -19,9 +19,10 @@ class Maincontroller extends CI_Controller {
 	 */
 	public function index()
 	{
+		$para['ProductCategoryDetails']=$this->Maindatabasemodel->getProductCategory();
 		$this->load->view('welcome_message');
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file maincontroller.php */
+/* Location: ./application/controllers/maincontroller.php */
