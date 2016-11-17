@@ -16,7 +16,7 @@
             <?php
             foreach ($customerAccount as $cA) {
                 ?>
-                <form name="register" id="register" action="/index.php/Maincontroller/change_cus_account" method="Post">
+                <form name="register" id="register" action="/index.php/maincontroller/change_cus_account" method="Post">
                     <span class="accountForm">First Name:</span><input type="text" name="fname" id="fname" value="<?php echo $cA->customerFirstname ?>">
                     <span class="error">* <?php if(isset($fnErr)) echo $fnErr;?></span><p></p>
                     <span class="accountForm">Last Name:</span><input type="text" name="lname" id="lname" value="<?php echo $cA->customerLastname ?>">

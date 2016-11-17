@@ -19,7 +19,7 @@
             <?php
             $totalPrice=0;
             $count=0;
-            echo '<form action="/index.php/Maincontroller/cus_place_order" method="post">';
+            echo '<form action="/index.php/maincontroller/cus_place_order" method="post">';
             foreach ($cusConfirmOrder as $cCO){
                 echo '<div class="cartProd">';
                     echo '<input type="image" class="cartImg" src="' . $cCO->productImage . '" alt="Image">';

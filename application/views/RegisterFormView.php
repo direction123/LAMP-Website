@@ -12,7 +12,7 @@
         </div>
         <div class="col-">
             <h2>Register</h2>
-            <form name="register" id="register" action="/index.php/Maincontroller/user_register_process" method="Post">
+            <form name="register" id="register" action="/index.php/maincontroller/user_register_process" method="Post">
                 <span class="accountForm">First Name:</span><input type="text" name="fname" id="fname" value="">
                 <span class="error">* <?php if(isset($fnErr)) echo $fnErr;?></span><p></p>
                 <span class="accountForm">Last Name:</span><input type="text" name="lname" id="lname" value="">

@@ -42,7 +42,7 @@
                     foreach ($sscustomerCart as $cC) {
                         if($guestProdID==$cC->productID){
                             ?>
-                            <form action="/index.php/Maincontroller/update_cus_cart" method="post">
+                            <form action="/index.php/maincontroller/update_cus_cart" method="post">
                                 <div class="cartProd">
                                     <input type="image" class="cartImg" src="<?php echo $cC->productImage; ?>" alt="Image">
                                     <input type="hidden" name="ProdID" value="<?php echo $cC->productID; ?>">
@@ -69,10 +69,10 @@
                     }
 
                 }
-                echo '<div class="cartDeleteAll"><form action="/index.php/Maincontroller/update_cus_cart" method="post">';
+                echo '<div class="cartDeleteAll"><form action="/index.php/maincontroller/update_cus_cart" method="post">';
                 echo '<input type="submit" name="submit" class="borderInput" value="Delete All">';
                 echo "</form></div>";
-                echo '<div class="cartLogin"><form action="/index.php/Maincontroller/user_login_page" method="post">';
+                echo '<div class="cartLogin"><form action="/index.php/maincontroller/user_login_page" method="post">';
                 echo '<input type="submit" name="submit" class="borderInput" value="Login to checkout">';
                 echo "</form></div>";
             }

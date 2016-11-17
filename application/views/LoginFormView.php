@@ -14,7 +14,7 @@
             <span class="error"><?php if(isset($loginErr)) echo $loginErr;?></span>
             <br/><br/>
             <h2>Login Form</h2>
-            <?php echo form_open('Maincontroller/user_login_process'); ?>
+            <?php echo form_open('maincontroller/user_login_process'); ?>
             <label>Username:</label>
             <input type="text" name="username" id="name" placeholder="username"/>
             <span class="error">* <?php if(isset($nameErr)) echo $nameErr;?></span>

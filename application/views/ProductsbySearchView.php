@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-2">
             <h2>Shop by Department</h2>
-            <form name="CatForm" id="CatForm"  action="/index.php/Maincontroller/view_products_by_category" method="Post">
+            <form name="CatForm" id="CatForm"  action="/index.php/maincontroller/view_products_by_category" method="Post">
                 <?php
                 foreach($ProductCategoryDetails as $PC)
                     echo '<input type="submit" name="prodCatNm" value="'.$PC->productCategoryName.'"style="background: transparent;border:none;"><br>';
@@ -26,7 +26,7 @@
                 }
                 foreach($ProductSearch as $PS){
                     ?>
-                    <form class="prodForm" action="/index.php/Maincontroller/view_single_product" method="Post">
+                    <form class="prodForm" action="/index.php/maincontroller/view_single_product" method="Post">
                         <input type="hidden" name="prodID" value="<?php
                         echo $PS->productID; ?>">
                         <div class="buttonHolder">

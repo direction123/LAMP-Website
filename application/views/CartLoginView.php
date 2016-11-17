@@ -21,7 +21,7 @@
             if(!empty($customerCart)) {
                 foreach ($customerCart as $cC) {
                     ?>
-                    <form action="/index.php/Maincontroller/update_cus_cart" method="post">
+                    <form action="/index.php/maincontroller/update_cus_cart" method="post">
                         <div class="cartProd">
                             <input type="image" class="cartImg" src="<?php echo $cC->productImage; ?>" alt="Image">
                             <input type="hidden" name="ProdID" value="<?php echo $cC->productID; ?>">
@@ -45,10 +45,10 @@
                     </form>
                 <?php
                 }
-                echo '<div class="cartDeleteAll"><form action="/index.php/Maincontroller/update_cus_cart" method="post">';
+                echo '<div class="cartDeleteAll"><form action="/index.php/maincontroller/update_cus_cart" method="post">';
                 echo '<input type="submit" name="submit" class="borderInput" value="Delete All">';
                 echo "</form></div>";
-                echo '<div class="cartLogin"><form action="/index.php/Maincontroller/cus_checkout" method="post">';
+                echo '<div class="cartLogin"><form action="/index.php/maincontroller/cus_checkout" method="post">';
                 echo '<input type="submit" name="submit" class="borderInput" value="Proceed to checkout">';
                 echo "</form></div>";
             }else{
