@@ -5,6 +5,7 @@ class maindatabasemodel extends CI_Model {
     {
             // Call the CI_Model constructor
             parent::__construct();
+            $this->load->database(); 
     }
 
 	public function getProductCategory(){
