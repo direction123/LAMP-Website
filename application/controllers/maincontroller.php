@@ -21,12 +21,12 @@ class Maincontroller extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->database();
+      //  $this->load->database();
     }
 
 	public function index()
 	{
-		$this->load->model('maindatabasemodel');
+	//	$this->load->model('maindatabasemodel');
 	//	$para['ProductCategoryDetails']=$this->maindatabasemodel->getProductCategory();
 		$this->load->view('welcome_message');
 	}
