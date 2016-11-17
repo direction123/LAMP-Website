@@ -21,6 +21,7 @@
             $count=0;
             echo '<form action="/index.php/maincontroller/cus_place_order" method="post">';
             foreach ($cusConfirmOrder as $cCO){
+                echo '<div>';
                 echo '<div class="cartProd">';
                     echo '<input type="image" class="cartImg" src="' . $cCO->productImage . '" alt="Image">';
                     echo '<div class="cartProdName">' . $cCO->productName. '</div>';
@@ -43,9 +44,10 @@
                 echo '<div class="cartQuant">';
                     echo $cCO->quantity;
                 echo '</div>';
+                echo '</div>';
                 $count++;
                 if($count==count($cusConfirmOrder)){
-                    echo '<div class="cartTotalPrice">Total price:  $'.$totalPrice.'</div>';
+                    echo '<div><div class="cartTotalPrice">Total price:  $'.$totalPrice.'</div></div>';
                     echo '<div class="orderINFO">';
                         echo 'First Name: '. $cCO->customerFirstname. '<p></p>';
                         echo 'Last Name: '. $cCO->customerLastname. '<p></p>';
