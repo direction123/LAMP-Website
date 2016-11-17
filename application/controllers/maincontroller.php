@@ -21,7 +21,11 @@ class Maincontroller extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-      //  $this->load->database();
+        // Load form helper library
+        $this->load->helper('form');
+        // Load session library
+        $this->load->library('session');
+        // Load database
         $this->load->model('maindatabasemodel');
     }
     private function test_input($data) {
