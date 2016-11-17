@@ -33,7 +33,7 @@
                         foreach($SalesProduct as $SP){
                             echo '<div class="prodPrice">';
                             echo  $SP->salesPrice;
-                            echo "<strike>$" . $SP->productPrice. "</strike><br>";
+                            echo " <strike>$" . $SP->productPrice. "</strike><br>";
                             echo '</div>';
                             //echo "Sales Date: '".$SP->startDate."' - '".$SP->endDate."'<p></p>";
                             echo '<input type="hidden" name="AddCartProdSalesPrice" value="' . $SP->salesPrice. '">';

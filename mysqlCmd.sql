@@ -93,7 +93,7 @@ CREATE TABLE Product (
 )ENGINE=INNODB;
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (1, 'VOLATILE','Brogan', 'http://a1.zassets.com/images/z/3/5/7/3/6/7/3573679-p-LARGE_SEARCH.jpg', 75);
+VALUES (1, 'VOLATILE','Brogan', 'http://a1.zassets.com/images/z/3/5/7/3/6/7/3573679-p-LARGE_SEARCH.jpg', 75.00);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
 VALUES (2, 'Ryka','Aurora', 'http://a2.zassets.com/images/z/3/6/1/8/0/6/3618067-p-LARGE_SEARCH.jpg', 69.99);
@@ -256,52 +256,52 @@ INSERT INTO ProductCategoryProduct
 VALUES (16,16,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (17,8,2);
+VALUES (17,17,3);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (18,1,3);
+VALUES (18,18,3);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (19,2,3);
+VALUES (19,19,3);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (20,3,3);
+VALUES (20,20,3);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (21,4,3);
+VALUES (21,21,3);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (22,5,3);
+VALUES (22,22,3);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (23,6,3);
+VALUES (23,23,3);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (24,7,3);
+VALUES (24,24,3);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (25,8,4);
+VALUES (25,25,4);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (26,9,4);
+VALUES (26,26,4);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (27,10,4);
+VALUES (27,27,4);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (28,11,4);
+VALUES (28,28,4);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (29,12,4);
+VALUES (29,29,4);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (30,13,4);
+VALUES (30,30,4);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (31,14,4);
+VALUES (31,31,4);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (32,15,4);
+VALUES (32,32,4);
 
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -321,10 +321,28 @@ CREATE TABLE SpecialSales (
 )ENGINE=INNODB;
 INSERT INTO SpecialSales
 (spacialSalesID, productID,	startDate, endDate, salesPrice)
-VALUES (1,9,'2015-07-07', '2016-12-31', 38.00);
+VALUES (1,1,'2015-07-07', '2016-12-31', 45.99);
 INSERT INTO SpecialSales
 (spacialSalesID, productID,	startDate, endDate, salesPrice)
-VALUES (2,6,'2015-06-03', '2017-12-31', 50.00);
+VALUES (2,4,'2015-06-03', '2017-12-31', 69.99);
+INSERT INTO SpecialSales
+(spacialSalesID, productID,	startDate, endDate, salesPrice)
+VALUES (3,9,'2015-07-07', '2016-12-31', 25.99);
+INSERT INTO SpecialSales
+(spacialSalesID, productID,	startDate, endDate, salesPrice)
+VALUES (4,13,'2015-06-03', '2017-12-31', 69.99);
+INSERT INTO SpecialSales
+(spacialSalesID, productID,	startDate, endDate, salesPrice)
+VALUES (5,17,'2015-07-07', '2016-12-31', 49.00);
+INSERT INTO SpecialSales
+(spacialSalesID, productID,	startDate, endDate, salesPrice)
+VALUES (6,25,'2015-06-03', '2017-12-31', 69.00);
+INSERT INTO SpecialSales
+(spacialSalesID, productID,	startDate, endDate, salesPrice)
+VALUES (7,28,'2015-07-07', '2016-12-31', 59.00);
+INSERT INTO SpecialSales
+(spacialSalesID, productID,	startDate, endDate, salesPrice)
+VALUES (8,32,'2015-06-03', '2017-12-31', 54.99);
 
 
 SET FOREIGN_KEY_CHECKS = 0;
