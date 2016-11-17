@@ -18,8 +18,12 @@
             </form>
         </div>
         <div class="col-10">
-            <div id="sales">
+ <!--            <div id="sales">
                 <h2>Special Sales</h2>
+                
+            </div>
+            <div id="others">
+                <h2>More Items to Consider</h2> -->
                 <?php
                 if (empty($SalesProductsbyCategory)) {
                     echo "Coming Soon";
@@ -44,12 +48,6 @@
                         <?php
                     }
                 }
-
-                ?>
-            </div>
-            <div id="others">
-                <h2>More Items to Consider</h2>
-                <?php
                 foreach($OtherProductsbyCategory as $OPC){
                     ?>
                     <form class="prodForm" action="/index.php/maincontroller/view_single_product" method="Post">
@@ -68,7 +66,7 @@
                     <?php
                 }
                 ?>
-            </div>
+           <!--  </div> -->
         </div>
     </div>
 </div>

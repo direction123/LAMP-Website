@@ -1,3 +1,17 @@
+/*
+https://github.com/elliottsj/codeigniter-dokku
+
+https://devcenter.heroku.com/articles/cleardb#using-cleardb-with-php
+http://blog.fossasia.org/deploying-php-and-mysql-app-on-heroku/
+$heroku config | grep CLEARDB_DATABASE_URL
+CLEARDB_DATABASE_URL: mysql://b884771106696d:96ca3bd0@us-cdbr-iron-east-04.cleardb.net/heroku_115d521be016c78?reconnect=true
+$mysql -u b884771106696d -h us-cdbr-iron-east-04.cleardb.net -p heroku_115d521be016c78
+(key: 96ca3bd0)
+mysql> source [path to engelsystem]/engelsystem/db/install.sql;
+mysql> source [path to engelsystem]/engelsystem/db/update.sql;
+mysql> exit;
+*/
+
 SET FOREIGN_KEY_CHECKS = 0;
 drop table if exists Employees;
 SET FOREIGN_KEY_CHECKS = 1;
@@ -54,16 +68,16 @@ CREATE TABLE ProductCategory (
 )ENGINE=INNODB;
 INSERT INTO ProductCategory
 (productCategoryID, productCategoryName, productCategoryDescription)
-VALUES (1, 'Games','Games');
+VALUES (1, 'Boots ','Boots ');
 INSERT INTO ProductCategory
 (productCategoryID, productCategoryName, productCategoryDescription)
-VALUES (2, 'Health','Health');
+VALUES (2, 'Sandals ','Sandals ');
 INSERT INTO ProductCategory
 (productCategoryID, productCategoryName, productCategoryDescription)
-VALUES (3, 'Music','Music');
+VALUES (3, 'Athletic','Athletic');
 INSERT INTO ProductCategory
 (productCategoryID, productCategoryName, productCategoryDescription)
-VALUES (4, 'News','News');
+VALUES (4, 'Pumps','Pumps');
 
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -79,52 +93,100 @@ CREATE TABLE Product (
 )ENGINE=INNODB;
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (1, 'Frogger','Frogger', 'https://upload.wikimedia.org/wikipedia/en/2/21/Frogger_1_xbla_cover.jpg', 0.99);
+VALUES (1, 'VOLATILE','Brogan', 'http://a1.zassets.com/images/z/3/5/7/3/6/7/3573679-p-LARGE_SEARCH.jpg', 75);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (2, 'Tetris','Tetris', 'https://upload.wikimedia.org/wikipedia/en/8/8d/NES_Tetris_Box_Front.jpg', 0.99);
+VALUES (2, 'Ryka','Aurora', 'http://a2.zassets.com/images/z/3/6/1/8/0/6/3618067-p-LARGE_SEARCH.jpg', 69.99);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (3, 'Tank','Tank', 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Tank_%28arcade_game%29.jpg/220px-Tank_%28arcade_game%29.jpg', 0.99);
+VALUES (3, 'Bearpaw','Emma Short', 'http://a2.zassets.com/images/z/3/7/0/3/2/7/3703271-p-LARGE_SEARCH.jpg', 79.99);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (4, 'Bubble Bobble','Bubble Bobble', 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Bubble_bobble.jpg/256px-Bubble_bobble.jpg', 0.99);
+VALUES (4, 'Bearpaw','Boshie', 'http://a2.zassets.com/images/z/3/7/1/4/6/0/3714603-p-LARGE_SEARCH.jpg', 89.99);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (5, 'Nike+','Nike+', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/200px-Logo_NIKE.svg.png', 0.99);
+VALUES (5, 'Rocket Dog','Halifax', 'http://a1.zassets.com/images/z/3/7/3/0/7/0/3730701-p-LARGE_SEARCH.jpg', 64.95);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (6, 'Personal Trainer','Personal Trainer', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Personal_trainer_showing_a_client_how_to_exercise_the_right_way_and_educating_them_along_the_way.jpg/250px-Personal_trainer_showing_a_client_how_to_exercise_the_right_way_and_educating_them_along_the_way.jpg', 0.99);
+VALUES (6, 'G by GUESS','Hurdle Wide Calf', 'http://a2.zassets.com/images/z/3/8/2/1/8/4/3821842-p-LARGE_SEARCH.jpg', 89.00);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (7, 'Weight Management','Weight Management', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/220px-Apples.jpg', 0.99);
+VALUES (7, 'COACH','Sullivan', 'http://a3.zassets.com/images/z/3/9/1/4/1/2/3914121-p-LARGE_SEARCH.jpg', 395.00);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (8, 'Women Sports','Women Sports', 'https://upload.wikimedia.org/wikipedia/en/a/a7/WomenSports_April_1976_cover.jpg', 0.99);
+VALUES (8, 'GUESS','Gabriele', 'http://a2.zassets.com/images/z/3/9/2/7/9/4/3927946-p-LARGE_SEARCH.jpg', 110.00);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (9, 'Trailer','Trailer', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Aldrich_Attack_movie_trailer_screenshot_%285%29.jpg/220px-Aldrich_Attack_movie_trailer_screenshot_%285%29.jpg', 0.99);
+VALUES (9, 'Fergalicious','Candace', 'http://a1.zassets.com/images/z/3/8/6/7/7/1/3867715-p-LARGE_SEARCH.jpg', 44.95);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (10, 'Live Nation Entertainment','Live Nation Entertainment', 'https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Live_Nation_Ent.png/240px-Live_Nation_Ent.png', 0.99);
+VALUES (10, 'Fergalicious','Candace', 'http://a1.zassets.com/images/z/3/8/6/7/7/1/3867716-p-LARGE_SEARCH.jpg', 44.95);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (11, 'DJ mix','DJ mix', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/DJM_350.jpg/170px-DJM_350.jpg', 0.99);
+VALUES (11, 'MICHAEL Michael Kors','MK Plate Jelly', 'http://a3.zassets.com/images/z/3/9/0/5/5/4/3905544-p-LARGE_SEARCH.jpg', 49.00);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (12, 'Acoustic Guitar','Acoustic Guitar', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Gibson_SJ200.jpg/200px-Gibson_SJ200.jpg', 0.99);
+VALUES (12, 'J. Renee','Hillrise', 'http://a2.zassets.com/images/z/3/6/7/9/6/2/3679623-p-LARGE_SEARCH.jpg', 99.95);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (13, 'BBC News','BBC News', 'https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/BBC_News.svg/200px-BBC_News.svg.png', 0.00);
+VALUES (13, 'J. Renee','Hillrise', 'http://a3.zassets.com/images/z/3/8/8/3/6/1/3883619-p-LARGE_SEARCH.jpg', 99.95);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (14, 'NPR','NPR', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/National_Public_Radio_logo.svg/159px-National_Public_Radio_logo.svg.png', 0.00);
+VALUES (14, 'Tommy Hilfiger','Chuck', 'http://a3.zassets.com/images/z/3/8/4/8/8/7/3848875-p-LARGE_SEARCH.jpg', 29.00);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (15, 'Fox News Channel','Fox News Channel', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Fox_News_Channel_logo.png/200px-Fox_News_Channel_logo.png', 0.00);
+VALUES (15, 'Kate Spade New York','Nova', 'http://a3.zassets.com/images/z/3/9/0/9/8/1/3909815-p-LARGE_SEARCH.jpg', 48.00);
 INSERT INTO Product
 (productID, productName, productDescription, productImage, productPrice)
-VALUES (16, 'The New York Times','The New York Times', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/New_York_Times_Frontpage_1914-07-29.png/220px-New_York_Times_Frontpage_1914-07-29.png', 0.00);
+VALUES (16, 'Sam Edelman','Monica', 'http://a3.zassets.com/images/z/3/9/2/2/2/4/3922240-p-LARGE_SEARCH.jpg', 24.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (17, 'SKECHERS','OG 90', 'http://a2.zassets.com/images/z/3/7/2/5/4/9/3725494-p-LARGE_SEARCH.jpg', 65.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (18, 'SKECHERS','OG 90', 'http://a3.zassets.com/images/z/3/7/2/5/4/9/3725496-p-LARGE_SEARCH.jpg', 69.99);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (19, 'SKECHERS','Microburst - One-Up', 'http://a2.zassets.com/images/z/3/7/2/5/5/5/3725552-p-LARGE_SEARCH.jpg', 55.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (20, 'SKECHERS','EZ Flex 3.0 - Serene Scene', 'http://a3.zassets.com/images/z/3/7/2/5/5/8/3725584-p-LARGE_SEARCH.jpg', 55.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (21, 'SKECHERS','Microburst - All-Mine', 'http://a2.zassets.com/images/z/3/7/2/5/5/9/3725592-p-LARGE_SEARCH.jpg', 55.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (22, 'SKECHERS','Microburst - All-Mine', 'http://a2.zassets.com/images/z/3/7/2/5/5/9/3725593-p-LARGE_SEARCH.jpg', 55.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (23, 'SKECHERS','Microburst - All-Mine', 'http://a1.zassets.com/images/z/3/7/2/5/5/9/3725594-p-LARGE_SEARCH.jpg', 55.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (24, 'SKECHERS','Flex Appeal 2.0 - Bright Side', 'http://a2.zassets.com/images/z/3/8/4/0/5/6/3840568-p-LARGE_SEARCH.jpg', 65.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (25, 'Nine West','Emergencee', 'http://a3.zassets.com/images/z/3/9/0/7/5/8/3907584-p-LARGE_SEARCH.jpg', 89.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (26, 'Nine West','Emergencee', 'http://a2.zassets.com/images/z/3/9/0/7/5/8/3907585-p-LARGE_SEARCH.jpg', 89.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (27, 'Nine West','Fabrice', 'http://a3.zassets.com/images/z/3/9/0/7/5/8/3907587-p-LARGE_SEARCH.jpg', 89.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (28, 'Nine West','Kelda', 'http://a1.zassets.com/images/z/3/9/0/7/5/9/3907590-p-LARGE_SEARCH.jpg', 89.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (29, 'Nine West','Xrazy', 'http://a1.zassets.com/images/z/3/9/0/7/6/1/3907610-p-LARGE_SEARCH.jpg', 79.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (30, 'Nine West','Eastlyn', 'http://a3.zassets.com/images/z/3/9/0/8/6/5/3908653-p-LARGE_SEARCH.jpg', 89.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (31, 'GUESS','Leonie', 'http://a1.zassets.com/images/z/3/9/1/7/9/3/3917939-p-LARGE_SEARCH.jpg', 89.00);
+INSERT INTO Product
+(productID, productName, productDescription, productImage, productPrice)
+VALUES (32, 'GUESS','Leonie', 'http://a3.zassets.com/images/z/3/9/1/7/9/4/3917940-p-LARGE_SEARCH.jpg', 89.00);
 
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -158,43 +220,88 @@ INSERT INTO ProductCategoryProduct
 VALUES (4,4,1);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (5,5,2);
+VALUES (5,5,1);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (6,6,2);
+VALUES (6,6,1);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (7,7,2);
+VALUES (7,7,1);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (8,8,2);
+VALUES (8,8,1);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (9,9,3);
+VALUES (9,9,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (10,10,3);
+VALUES (10,10,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (11,11,3);
+VALUES (11,11,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (12,12,3);
+VALUES (12,12,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (13,13,4);
+VALUES (13,13,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (14,14,4);
+VALUES (14,14,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (15,15,4);
+VALUES (15,15,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (16,16,4);
+VALUES (16,16,2);
 INSERT INTO ProductCategoryProduct
 (ID, productID, productCategoryID)
-VALUES (17,8,4);
+VALUES (17,8,2);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (18,1,3);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (19,2,3);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (20,3,3);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (21,4,3);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (22,5,3);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (23,6,3);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (24,7,3);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (25,8,4);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (26,9,4);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (27,10,4);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (28,11,4);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (29,12,4);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (30,13,4);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (31,14,4);
+INSERT INTO ProductCategoryProduct
+(ID, productID, productCategoryID)
+VALUES (32,15,4);
 
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -214,10 +321,10 @@ CREATE TABLE SpecialSales (
 )ENGINE=INNODB;
 INSERT INTO SpecialSales
 (spacialSalesID, productID,	startDate, endDate, salesPrice)
-VALUES (1,9,'2015-07-07', '2015-12-31', 0.3);
+VALUES (1,9,'2015-07-07', '2016-12-31', 38.00);
 INSERT INTO SpecialSales
 (spacialSalesID, productID,	startDate, endDate, salesPrice)
-VALUES (2,6,'2015-06-03', '2015-12-31', 0.2);
+VALUES (2,6,'2015-06-03', '2017-12-31', 50.00);
 
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -296,3 +403,18 @@ CREATE TABLE OrderItems (
       REFERENCES Orders(orderID)
       ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE=INNODB;
+
+
+-- SET FOREIGN_KEY_CHECKS = 0;
+-- drop table if exists ci_sessions;
+-- SET FOREIGN_KEY_CHECKS = 1;
+-- CREATE TABLE IF NOT EXISTS  `ci_sessions` (
+--     id varchar(40) DEFAULT '0' NOT NULL,
+--     ip_address varchar(45) DEFAULT '0' NOT NULL,
+--     user_agent varchar(120) NOT NULL,
+--     last_activity int(10) unsigned DEFAULT 0 NOT NULL,
+--     timestamp TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP(6),
+--     data text NOT NULL,
+--     PRIMARY KEY (id),
+--     KEY `last_activity_idx` (`last_activity`)
+-- );
