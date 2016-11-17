@@ -24,6 +24,12 @@ class Maincontroller extends CI_Controller {
       //  $this->load->database();
         $this->load->model('maindatabasemodel');
     }
+    private function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
 	// public function index()
 	// {
