@@ -48,11 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'csci571database.cfgacq3r51se.us-east-1.rds.amazonaws.com:3306';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'DDxxcoding';
-$db['default']['database'] = 'myDatabase';
-$db['default']['dbdriver'] = 'mysqli';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = '';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
+$db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

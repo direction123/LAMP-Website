@@ -1,25 +1,24 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "5fe664b559f49dec2b6f60f6693ec35a",
-    "content-hash": "e6902c417fa60de08a0e3964c851a05a",
     "packages": [],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v114",
+            "version": "v67",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "a2222b58a1591c789fc987e797cc824e5a7e125d"
+                "reference": "8da6b92aad89b2e7254f5eb2ad39ffac315b2282"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/a2222b58a1591c789fc987e797cc824e5a7e125d",
-                "reference": "a2222b58a1591c789fc987e797cc824e5a7e125d",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/8da6b92aad89b2e7254f5eb2ad39ffac315b2282",
+                "reference": "8da6b92aad89b2e7254f5eb2ad39ffac315b2282",
                 "shasum": ""
             },
             "bin": [
@@ -40,7 +39,7 @@
                 }
             ],
             "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
-            "homepage": "https://github.com/heroku/heroku-buildpack-php",
+            "homepage": "http://github.com/heroku/heroku-buildpack-php",
             "keywords": [
                 "apache",
                 "apache2",
@@ -50,7 +49,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-11-10 23:19:38"
+            "time": "2015-03-24 19:49:58"
         }
     ],
     "aliases": [],
