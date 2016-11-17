@@ -1,4 +1,4 @@
-<?php if ( ! defined("BASEPATH")) exit("No direct script access allowed");
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Maincontroller extends CI_Controller {
 
@@ -11,7 +11,7 @@ class Maincontroller extends CI_Controller {
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
 	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it"s displayed at http://example.com/
+	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
@@ -53,7 +53,7 @@ class Maincontroller extends CI_Controller {
     public function index_login()
     {
         if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
-            echo "<script>alert("Inactivity for ".$_SESSION["customerTimeout"]."s!");</script>";
+            echo "<script>alert('Inactivity for ".$_SESSION["customerTimeout"]."s!');</script>";
             session_unset();
             $para["ProductCategoryDetails"] = $this->maindatabasemodel->getProductCategory();
             $para["SpecialSalesProd"] = $this->maindatabasemodel->getSpecialSalesProd();
