@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "Maincontroller";
+$route['default_controller'] = "Maincontroller/index";
 $route['404_override'] = '';
 
 
