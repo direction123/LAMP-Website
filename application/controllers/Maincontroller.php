@@ -6,7 +6,7 @@ class Maincontroller extends CI_Controller
     {
         parent::__construct();
 // Load database
-        $this->load->model('Maindatabasemodel');
+        $this->load->model('maindatabasemodel');
     }
 
     public function index()
