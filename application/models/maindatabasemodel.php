@@ -113,8 +113,8 @@ where p.productID = pcp.productID  and pc.productCategoryID= pcp.productCategory
         for($i=0;$i<count($ssCartProdIDArray);$i++){
             $test[]=$ssCartProdIDArray[$i];
         }
-        $sql = "SELECT * FROM Product WHERE productID in ?";
-        $query = $this->db->query($sql, array($test));
+        $sql = "SELECT * FROM Product WHERE productID IN (".implode(',', $test).")";
+        $query = $this->db->query($sql);
         return $query->result();
     }
     public function upCusCart($data){
