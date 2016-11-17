@@ -46,35 +46,29 @@
 */
 
 $active_group = 'default';
-$active_record = TRUE;
+$query_builder = TRUE;
 
-/*
- * Parse the DATABASE_URL MySQL URI.
- * Stolen from <https://devcenter.heroku.com/articles/cleardb#using-cleardb-with-php>
- */
-$database_url = getenv("DATABASE_URL");
-$url=parse_url(getenv("DATABASE_URL"));
-$server = $url["host"];
-$username = isset($url["user"]) ? $url["user"] : '';
-$password = isset($url["pass"]) ? $url["pass"] : '';
-$database = substr($url["path"], 1);
-
-
-$db['default']['hostname'] = 'csci571database.cfgacq3r51se.us-east-1.rds.amazonaws.com:3306';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'DDxxcoding';
-$db['default']['database'] = 'myDatabase';
-$db['default']['dbdriver'] = 'mysqli';
-$db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
+$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'csci571database.cfgacq3r51se.us-east-1.rds.amazonaws.com:3306',
+	'username' => 'root',
+	'password' => 'DDxxcoding',
+	'database' => 'DDxxcoding',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => TRUE,
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
 
 
 /* End of file database.php */
