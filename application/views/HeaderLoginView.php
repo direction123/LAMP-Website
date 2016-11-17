@@ -13,7 +13,7 @@
     </div>
     <div id="headerNav">
         <div id="headerNav-1">
-            <form name="WelcomeForm" id="WelcomeForm" action="/index.php/Maincontroller" method="Post"">
+            <form name="WelcomeForm" id="WelcomeForm" action="/index.php/Maincontroller/index_login" method="Post">
                 <input type="submit" id="WelcomeFormIn" class="transparentInput" value="Welcome to online footware store!">
             </form>
             <img src="<?php echo asset_url(); ?>/baby_feet.png" id="footLogo" alt="HTML5 Icon">
@@ -28,10 +28,16 @@
                 <input type="submit" id="searchFromIn" class="transparentInput" value="Search Products">
             </form>
             <div id="ids">
-                <form name="loginForm" id="loginForm" action="/index.php/Maincontroller/user_login_page" method="Post">
-                    <input type="submit" id="loginFormIn" class="transparentInput" value="Login"></form>
-                <form name="registerForm" id="registerForm" action="/index.php/Maincontroller/user_register_page" method="Post">
-                    <input type="submit" id="registerFormIn" class="transparentInput" value="Register" ></form>
+                <span id="helloID">  Hello!  <?php echo $customerUsername; ?></span>
+                <form name="myOrderForm" id="myOrderForm" action="/index.php/Maincontroller/view_cus_order" method="Post">
+                    <input type="submit" name="myOrderFormIn" class="transparentInput" value="My Order">
+                </form>
+                <form name="myAccountForm" id="myAccountForm" action="/index.php/Maincontroller/view_cus_account" method="Post">
+                    <input type="submit" name="myAccountFormIn" class="transparentInput" value="My Account">
+                </form>
+                <form name="logoutForm" id="logoutForm" action="/index.php/Maincontroller/user_logout_process" method="Post">
+                    <input type="submit" id="logoutFormIn" class="transparentInput" value="Logout">
+                </form>
             </div>
         </div>
     </div>
