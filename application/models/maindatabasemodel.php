@@ -1,6 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Maindatabasemodel extends CI_Model {
+class maindatabasemodel extends Model {
+	function maindatabasemodel()
+     {
+        parent::Model();
+        $this->load->database();
+     }
 	public function getProductCategory(){
         $query = $this->db->get('ProductCategory');
         return $query->result();
