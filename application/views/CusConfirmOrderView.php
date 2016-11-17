@@ -18,7 +18,6 @@
             <div class="cartQuant">Quantity</div>
             <?php
             $totalPrice=0;
-            $count=0;
             echo '<form action="/index.php/maincontroller/cus_place_order" method="post">';
             foreach ($cusConfirmOrder as $cCO){
                 echo '<div>';
@@ -45,22 +44,18 @@
                     echo $cCO->quantity;
                 echo '</div>';
                 echo '</div>';
-                $count++;
-                if($count==count($cusConfirmOrder)){
-                    echo '<div><div class="cartTotalPrice">Total price:  $'.$totalPrice.'</div></div>';
-                    echo '<div class="orderINFO">';
-                        echo 'First Name: '. $cCO->customerFirstname. '<p></p>';
-                        echo 'Last Name: '. $cCO->customerLastname. '<p></p>';
-                        echo 'Shipping Address: '. $cCO->customerAddress. '<p></p>';
-                        echo 'Credit Card Number: '. $cCO->customerCreditcard. '<p></p>';
-                        echo 'Security Code: '. $cCO->customerSecuritycode. '<p></p>';
-                        echo 'Expiration Date: '. $cCO->customerexpirationDate. '<p></p>';
-                        echo 'Billing Address: '. $cCO->customerBillingAddress. '<p></p>';
-                    echo '</div>';
-                    echo '<input type="submit" name="submit" class="borderInput" value="Place Order">';
-
-                }
             }
+            echo '<div><div class="cartTotalPrice">Total price:  $'.$totalPrice.'</div></div>';
+            echo '<div class="orderINFO">';
+                echo 'First Name: '. $cCO->customerFirstname. '<p></p>';
+                echo 'Last Name: '. $cCO->customerLastname. '<p></p>';
+                echo 'Shipping Address: '. $cCO->customerAddress. '<p></p>';
+                echo 'Credit Card Number: '. $cCO->customerCreditcard. '<p></p>';
+                echo 'Security Code: '. $cCO->customerSecuritycode. '<p></p>';
+                echo 'Expiration Date: '. $cCO->customerexpirationDate. '<p></p>';
+                echo 'Billing Address: '. $cCO->customerBillingAddress. '<p></p>';
+            echo '</div>';
+            echo '<input type="submit" name="submit" class="borderInput" value="Place Order">';
             echo "</form>";
             ?>
         </div>
