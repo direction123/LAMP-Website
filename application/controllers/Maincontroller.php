@@ -20,10 +20,10 @@ class Maincontroller extends CI_Controller {
 // Show login page
     public function index()
     {
-        $para['ProductCategoryDetails']=$this->Maindatabasemodel->getProductCategory();
-        $para['SpecialSalesProd']=$this->Maindatabasemodel->getSpecialSalesProd();
+        //$para['ProductCategoryDetails']=$this->Maindatabasemodel->getProductCategory();
+        //$para['SpecialSalesProd']=$this->Maindatabasemodel->getSpecialSalesProd();
         $this->load->view('HeaderGuestView');
-        $this->load->view('IndexGuestView',$para);
+        //$this->load->view('IndexGuestView',$para);
     }
     public function index_login()
     {

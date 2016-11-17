@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="header">
-    <div id="headerShipping">
+    <!-- <div id="headerShipping">
         <span id="headerShippingFont">FREE SHIPPING ON ORDERS $50 OR MORE!</span>
     </div>
     <div id="headerNav">
@@ -34,7 +34,7 @@
                     <input type="submit" id="registerFormIn" class="transparentInput" value="Register" ></form>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 </body>
 </html>
