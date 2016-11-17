@@ -28,7 +28,7 @@ class Maincontroller extends CI_Controller {
 	{
 	 	$this->load->model('maindatabasemodel');
 	//	$para['ProductCategoryDetails']=$this->maindatabasemodel->getProductCategory();
-		$this->load->view('welcome_message');
+		$this->load->view('HeaderGuestView');
 	}
 }
 
