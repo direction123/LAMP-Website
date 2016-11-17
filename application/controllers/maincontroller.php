@@ -505,7 +505,7 @@ class Maincontroller extends CI_Controller {
                 $this->load->view('HeaderLoginView', $para);
 
                 $data = array(
-                    'customerID' => $_SESSION['customerID'];
+                    'customerID' => $_SESSION['customerID']
                 );
                 $para['customerCart'] = $this->maindatabasemodel->getCusCart($data);
 
