@@ -22,6 +22,7 @@ class Maincontroller extends CI_Controller {
     {
         parent::__construct();
       //  $this->load->database();
+        $this->load->model('maindatabasemodel');
     }
 
 	// public function index()
@@ -33,8 +34,8 @@ class Maincontroller extends CI_Controller {
 	// Show login page
     public function index()
     {
-        $para['ProductCategoryDetails']=$this->Maindatabasemodel->getProductCategory();
-        $para['SpecialSalesProd']=$this->Maindatabasemodel->getSpecialSalesProd();
+        $para['ProductCategoryDetails']=$this->maindatabasemodel->getProductCategory();
+        $para['SpecialSalesProd']=$this->maindatabasemodel->getSpecialSalesProd();
         $this->load->view('HeaderGuestView');
         $this->load->view('IndexGuestView',$para);
     }
@@ -43,22 +44,22 @@ class Maincontroller extends CI_Controller {
         if ((time() - $_SESSION["customerLastActivitytime"]) > $_SESSION["customerTimeout"]) {
             echo "<script>alert('Inactivity for ".$_SESSION["customerTimeout"]."s!');</script>";
             session_unset();
-            $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-            $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+            $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+            $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
             $this->load->view('HeaderGuestView');
             $this->load->view('IndexGuestView', $para);
         } elseif (!(isset($_SESSION["customerID"]))) {
             echo "<script>alert('No customerID');</script>";
             session_unset();
-            $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-            $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+            $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+            $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
             $this->load->view('HeaderGuestView');
             $this->load->view('IndexGuestView', $para);
         } else {
             $_SESSION["customerLastActivitytime"] = time();
 
-            $para['ProductCategoryDetails']=$this->Maindatabasemodel->getProductCategory();
-            $para['SpecialSalesProd']=$this->Maindatabasemodel->getSpecialSalesProd();
+            $para['ProductCategoryDetails']=$this->maindatabasemodel->getProductCategory();
+            $para['SpecialSalesProd']=$this->maindatabasemodel->getSpecialSalesProd();
             $para['customerUsername'] = $_SESSION["customerUsername"];
             $this->load->view('HeaderLoginView',$para);
             $this->load->view('IndexLoginView',$para);
@@ -172,7 +173,7 @@ class Maincontroller extends CI_Controller {
 
         if($flag==1){
             $suc="Register successfully";
-            $this->Maindatabasemodel->register($data);
+            $this->maindatabasemodel->register($data);
             $this->load->view('HeaderGuestView');
             $para["fnErr"] = $fnErr;
             $para["lnErr"] = $lnErr;
@@ -205,8 +206,8 @@ class Maincontroller extends CI_Controller {
     }
     public function user_logout_process() {
         session_unset();
-        $para['ProductCategoryDetails']=$this->Maindatabasemodel->getProductCategory();
-        $para['SpecialSalesProd']=$this->Maindatabasemodel->getSpecialSalesProd();
+        $para['ProductCategoryDetails']=$this->maindatabasemodel->getProductCategory();
+        $para['SpecialSalesProd']=$this->maindatabasemodel->getSpecialSalesProd();
         $this->load->view('HeaderGuestView');
         $this->load->view('IndexGuestView',$para);
     }
@@ -227,12 +228,12 @@ class Maincontroller extends CI_Controller {
         }
 
         if ($nameErr == "" && $pwdErr == "") {
-            $result = $this->Maindatabasemodel->login($data);
+            $result = $this->maindatabasemodel->login($data);
 
             if ($result == TRUE) {
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
-                $result = $this->Maindatabasemodel->getCusID($data);
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
+                $result = $this->maindatabasemodel->getCusID($data);
                 foreach ($result as $r) {
                     $para['customerID'] = $r->customerID;
                 }
@@ -275,7 +276,7 @@ class Maincontroller extends CI_Controller {
                             'AddCartProdSalesPrice' => $guestProdSalesPrice,
                             'AddCartProdSalesOrNot' => $guestProdSalesOrNot
                         );
-                        $this->Maindatabasemodel->add2Cart($data);
+                        $this->maindatabasemodel->add2Cart($data);
                     }
                 }
             } else {
@@ -303,8 +304,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -320,9 +321,9 @@ class Maincontroller extends CI_Controller {
             }
 
             $data['searchProd'] = $this->test_input($this->input->post('searchProd'));
-            $para['ProductSearch'] = $this->Maindatabasemodel->getProductSearch($data);
-            $para['SalesProductSearch'] = $this->Maindatabasemodel->getSpecialSalesProd();
-            $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
+            $para['ProductSearch'] = $this->maindatabasemodel->getProductSearch($data);
+            $para['SalesProductSearch'] = $this->maindatabasemodel->getSpecialSalesProd();
+            $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
             $this->load->view('ProductsbySearchView', $para);
         }
     }
@@ -336,8 +337,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -353,9 +354,9 @@ class Maincontroller extends CI_Controller {
             }
 
             $data['prodCatNm'] = $this->test_input($this->input->post('prodCatNm'));
-            $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-            $para['SalesProductsbyCategory'] = $this->Maindatabasemodel->getSalesProductsbyCategory($data);
-            $para['OtherProductsbyCategory'] = $this->Maindatabasemodel->getOtherProductsbyCategory($data);
+            $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+            $para['SalesProductsbyCategory'] = $this->maindatabasemodel->getSalesProductsbyCategory($data);
+            $para['OtherProductsbyCategory'] = $this->maindatabasemodel->getOtherProductsbyCategory($data);
 
             $this->load->view('ProductsbyCategoryView', $para);
         }
@@ -368,8 +369,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -384,11 +385,11 @@ class Maincontroller extends CI_Controller {
                 $this->load->view('HeaderGuestView');
             }
             $data['prodID'] = $this->test_input($this->input->post('prodID'));
-            $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-            $para['Product'] = $this->Maindatabasemodel->getProduct($data);
-            $para['ProductIsSale'] = $this->Maindatabasemodel->ifProductSale($data);
-            $para['SalesProduct'] = $this->Maindatabasemodel->getSalesProduct($data);
-            $para['OtherInterestedProductsbyCategory'] = $this->Maindatabasemodel->getOtherInterestedProductsbyCategory($data);
+            $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+            $para['Product'] = $this->maindatabasemodel->getProduct($data);
+            $para['ProductIsSale'] = $this->maindatabasemodel->ifProductSale($data);
+            $para['SalesProduct'] = $this->maindatabasemodel->getSalesProduct($data);
+            $para['OtherInterestedProductsbyCategory'] = $this->maindatabasemodel->getOtherInterestedProductsbyCategory($data);
             $this->load->view('ProductView', $para);
         }
     }
@@ -400,8 +401,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -421,14 +422,14 @@ class Maincontroller extends CI_Controller {
                     'AddCartProdSalesPrice' => $this->test_input($this->input->post('AddCartProdSalesPrice')),
                     'AddCartProdSalesOrNot' => $this->test_input($this->input->post('AddCartProdSalesOrNot'))
                 );
-                $result = $this->Maindatabasemodel->add2Cart($data);
+                $result = $this->maindatabasemodel->add2Cart($data);
                 if($result==false){
                     $para['exist'] = "Product exists";
                 } else {
                     $para['exist'] = "";
                 }
 
-                $para['customerCart'] = $this->Maindatabasemodel->getCusCart($data);
+                $para['customerCart'] = $this->maindatabasemodel->getCusCart($data);
                 $para['customerID'] = $this->session->userdata('customerID');
                 $para['customerUsername'] = $this->session->userdata('customerUsername');
                 $para['customerLastActivitytime'] = $this->session->userdata('customerLastActivitytime');
@@ -464,7 +465,7 @@ class Maincontroller extends CI_Controller {
                     $ssCartProdIDArray[]=$_SESSION["ssCart"][$index]["ssCartProdID"];
                     $index++;
                 }
-                $para['sscustomerCart'] = $this->Maindatabasemodel->getGuestCusCart($ssCartProdIDArray);
+                $para['sscustomerCart'] = $this->maindatabasemodel->getGuestCusCart($ssCartProdIDArray);
                 $this->load->view('CartGuestView', $para, $_SESSION["ssCart"]);
             }
         }
@@ -477,8 +478,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -493,7 +494,7 @@ class Maincontroller extends CI_Controller {
                 $data = array(
                     'customerID' => $this->session->userdata('customerID')
                 );
-                $para['customerCart'] = $this->Maindatabasemodel->getCusCart($data);
+                $para['customerCart'] = $this->maindatabasemodel->getCusCart($data);
 
                 $this->load->view('CartLoginView', $para);
 
@@ -509,7 +510,7 @@ class Maincontroller extends CI_Controller {
                         $ssCartProdIDArray[]=$_SESSION["ssCart"][$index]["ssCartProdID"];
                         $index++;
                     }
-                    $para['sscustomerCart'] = $this->Maindatabasemodel->getGuestCusCart($ssCartProdIDArray);
+                    $para['sscustomerCart'] = $this->maindatabasemodel->getGuestCusCart($ssCartProdIDArray);
                     $this->load->view('CartGuestView', $para, $_SESSION["ssCart"]);
                 }
             }
@@ -523,8 +524,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -541,9 +542,9 @@ class Maincontroller extends CI_Controller {
                     'Qty' => $this->test_input($this->input->post('quantity')),
                     'Action' => $this->test_input($this->input->post('submit'))
                 );
-                $this->Maindatabasemodel->upCusCart($data);
+                $this->maindatabasemodel->upCusCart($data);
 
-                $para['customerCart'] = $this->Maindatabasemodel->getCusCart($data);
+                $para['customerCart'] = $this->maindatabasemodel->getCusCart($data);
                 $this->load->view('CartLoginView', $para);
             } else {
                 $this->load->view('HeaderGuestView');
@@ -584,7 +585,7 @@ class Maincontroller extends CI_Controller {
                         $ssCartProdIDArray[]=$_SESSION["ssCart"][$index]["ssCartProdID"];
                         $index++;
                     }
-                    $para['sscustomerCart'] = $this->Maindatabasemodel->getGuestCusCart($ssCartProdIDArray);
+                    $para['sscustomerCart'] = $this->maindatabasemodel->getGuestCusCart($ssCartProdIDArray);
                     $this->load->view('CartGuestView', $para, $_SESSION["ssCart"]);
                 }
 
@@ -598,8 +599,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -611,7 +612,7 @@ class Maincontroller extends CI_Controller {
 
                 $para['customerUsername'] = $_SESSION["customerUsername"];
                 $this->load->view('HeaderLoginView',$para);
-                $para['customerAccount']=$this->Maindatabasemodel->getCusAccount($data);
+                $para['customerAccount']=$this->maindatabasemodel->getCusAccount($data);
                 $this->load->view('CusAccountView', $para);
             }
         }
@@ -623,8 +624,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -705,7 +706,7 @@ class Maincontroller extends CI_Controller {
                 if($flag==1) {
                     $suc = "Change successfully";
                     $data['customerID'] = $this->session->userdata('customerID');
-                    $this->Maindatabasemodel->changeCusAccount($data);
+                    $this->maindatabasemodel->changeCusAccount($data);
                 }
 
                 $para["fnErr"] = $fnErr;
@@ -723,7 +724,7 @@ class Maincontroller extends CI_Controller {
                 $para['customerUsername'] = $_SESSION["customerUsername"];
                 $this->load->view('HeaderLoginView', $para);
                 $data['customerID'] = $this->session->userdata('customerID');
-                $para['customerAccount']=$this->Maindatabasemodel->getCusAccount($data);
+                $para['customerAccount']=$this->maindatabasemodel->getCusAccount($data);
                 $this->load->view('CusAccountView', $para);
             }
         }
@@ -735,13 +736,13 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
                 $data['customerID'] = $this->session->userdata('customerID');
-                $para['cusConfirmOrder'] = $this->Maindatabasemodel->confirmOrder($data);
+                $para['cusConfirmOrder'] = $this->maindatabasemodel->confirmOrder($data);
                 $para['customerUsername'] = $_SESSION["customerUsername"];
                 $this->load->view('HeaderLoginView', $para);
                 $this->load->view('CusConfirmOrderView', $para);
@@ -755,19 +756,19 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
                 $data['customerID'] = $this->session->userdata('customerID');
-                $this->Maindatabasemodel->placeOrder($data);
+                $this->maindatabasemodel->placeOrder($data);
 
                 $para['customerUsername'] = $_SESSION["customerUsername"];
                 $this->load->view('HeaderLoginView', $para);
 
                 $data['customerID'] = $this->session->userdata('customerID');
-                $para['customerOrder'] = $this->Maindatabasemodel->getCusOrder($data);
+                $para['customerOrder'] = $this->maindatabasemodel->getCusOrder($data);
                 $this->load->view('CusOrderView', $para);
             }
         }
@@ -779,8 +780,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -788,7 +789,7 @@ class Maincontroller extends CI_Controller {
                 $this->load->view('HeaderLoginView', $para);
 
                 $data['customerID'] = $this->session->userdata('customerID');
-                $para['customerOrder'] = $this->Maindatabasemodel->getCusOrder($data);
+                $para['customerOrder'] = $this->maindatabasemodel->getCusOrder($data);
                 $this->load->view('CusOrderView', $para);
             }
         }
@@ -800,8 +801,8 @@ class Maincontroller extends CI_Controller {
                 echo "<script>alert('Inactivity for " . $_SESSION["customerTimeout"] . "s!');</script>";
                 session_unset();
 
-                $para['ProductCategoryDetails'] = $this->Maindatabasemodel->getProductCategory();
-                $para['SpecialSalesProd'] = $this->Maindatabasemodel->getSpecialSalesProd();
+                $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
+                $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
                 $this->load->view('HeaderGuestView');
                 $this->load->view('IndexGuestView', $para);
             } else {
@@ -809,7 +810,7 @@ class Maincontroller extends CI_Controller {
                 $this->load->view('HeaderLoginView', $para);
 
                 $data['orderID'] = $this->test_input($this->input->post('orderID'));
-                $para['customerOrderDetails'] = $this->Maindatabasemodel->getCusOrderDetail($data);
+                $para['customerOrderDetails'] = $this->maindatabasemodel->getCusOrderDetail($data);
                 $this->load->view('CusOrderDetailsView', $para);
             }
         }
