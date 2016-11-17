@@ -240,7 +240,7 @@ class Maincontroller extends CI_Controller {
 
         if ($nameErr == "" && $pwdErr == "") {
             $result = $this->maindatabasemodel->login($data);
-
+            echo 'login';
             if ($result == TRUE) {
                 $para['ProductCategoryDetails'] = $this->maindatabasemodel->getProductCategory();
                 $para['SpecialSalesProd'] = $this->maindatabasemodel->getSpecialSalesProd();
@@ -248,6 +248,7 @@ class Maincontroller extends CI_Controller {
                 foreach ($result as $r) {
                     $para['customerID'] = $r->customerID;
                 }
+                echo $para['customerID'];
                 $_SESSION["customerID"] = $para['customerID'];
                 $_SESSION["customerUsername"] = $data['username'];
                 $_SESSION["customerLastActivitytime"] = time();
