@@ -17,9 +17,21 @@ class Maincontroller extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+    {
+        parent::__construct();
+// Load form helper library
+        $this->load->helper('form');
+// Load session library
+        $this->load->library('session');
+// Load database
+        $this->load->model('maindatabasemodel');
+    }
+
 	public function index()
 	{
-		$para['ProductCategoryDetails']=$this->Maindatabasemodel->getProductCategory();
+		$para['ProductCategoryDetails']=$this->maindatabasemodel->getProductCategory();
 		$this->load->view('welcome_message');
 	}
 }
